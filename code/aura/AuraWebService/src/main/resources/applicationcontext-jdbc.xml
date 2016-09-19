@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+
+	<tx:annotation-driven/>
+
+	<!-- ################################ Aura ################################ -->
+
+	<!--&lt;!&ndash; Aura Client DAO JDBC &ndash;&gt;-->
+	<!--<bean id="clientDaoJdbc"-->
+		  <!--scope="prototype"-->
+		  <!--class="com.banregio.aura.webservices.persistence.clients.jdbc.ClientsDaoJdbc">-->
+		<!--<constructor-arg index="0" ref="auraDataSource" />-->
+	<!--</bean>-->
+
+	<!-- Aura DAO JDBC -->
+	<bean id="auraDaoJdbc"
+		  scope="prototype"
+		  class="com.banregio.aura.webservices.persistence.jdbc.AuraDaoJdbc">
+		<constructor-arg index="0" ref="auraDataSource" />
+	</bean>
+
+	<!-- Configuration DAO JDBC -->
+	<bean id="configurationDaoJdbc"
+		  scope="prototype"
+		  class="com.banregio.aura.webservices.persistence.jdbc.ConfigurationDaoJdbc">
+		<constructor-arg index="0" ref="notificationsDataSource" />
+	</bean>
+</beans>

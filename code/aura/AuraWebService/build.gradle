@@ -1,0 +1,63 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'war'
+
+compileJava.options.encoding = 'UTF-8'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+  mavenCentral()
+}
+
+final springVersion = '4.2.3.RELEASE'
+
+dependencies {
+    compile fileTree(dir: 'lib', include: '**/*.jar')
+
+    //banregio model
+    compile project(':AuraModel')
+
+    //spring
+    compile group: 'org.springframework', name: 'spring-core', version: springVersion
+    compile group: 'org.springframework', name: 'spring-web', version: springVersion
+    compile group: 'org.springframework', name: 'spring-context', version: springVersion
+    compile group: 'org.springframework', name: 'spring-tx', version: springVersion
+    compile group: 'org.springframework', name: 'spring-jdbc', version: springVersion
+    compile group: 'org.springframework', name: 'spring-webmvc', version: springVersion
+
+    //jackson
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.6.3'
+
+    //json
+    compile group: 'org.json', name: 'json', version: '20151123'
+
+    //postgresql
+    compile group: 'postgresql', name: 'postgresql', version: '9.1-901.jdbc4'
+
+    //log4j
+    compile group: 'log4j', name: 'log4j', version: '1.2.17'
+
+    //java servlets
+    compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.0.1'
+}
+
+sourceSets {
+    main {
+      java {
+        srcDirs 'src/main/java'
+      }
+      output.resourcesDir = "build/classes/main"
+    }
+}
+
+configurations.all {
+    // check for updates every build
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+war {
+    archiveName = 'auraWebService.war'
+}
