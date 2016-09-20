@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @Controller("clientController")
 @Scope("prototype")
-@RequestMapping("/client")
+@RequestMapping("/api/v1/client")
 public class ClientController {
 
   @Autowired
