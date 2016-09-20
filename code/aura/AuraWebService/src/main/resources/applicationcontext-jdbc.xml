@@ -9,12 +9,12 @@
 
 	<!-- ################################ Aura ################################ -->
 
-	<!--&lt;!&ndash; Aura Client DAO JDBC &ndash;&gt;-->
-	<!--<bean id="clientDaoJdbc"-->
-		  <!--scope="prototype"-->
-		  <!--class="com.banregio.aura.webservices.persistence.clients.jdbc.ClientsDaoJdbc">-->
-		<!--<constructor-arg index="0" ref="auraDataSource" />-->
-	<!--</bean>-->
+	<!-- Aura Client DAO JDBC -->
+	<bean id="clientDaoJdbc"
+		  scope="prototype"
+		  class="com.banregio.aura.webservices.persistence.clients.jdbc.ClientsDaoJdbc">
+		<constructor-arg index="0" ref="auraDataSource" />
+	</bean>
 
 	<!-- Aura DAO JDBC -->
 	<bean id="auraDaoJdbc"

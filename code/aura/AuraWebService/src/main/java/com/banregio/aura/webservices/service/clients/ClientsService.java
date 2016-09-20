@@ -1,5 +1,7 @@
 package com.banregio.aura.webservices.service.clients;
 
+import com.banregio.aura.model.ClientWrapper;
+
 /**
  * Aura clients services
  *
@@ -9,5 +11,14 @@ package com.banregio.aura.webservices.service.clients;
  */
 
 public interface ClientsService {
+
+  /**
+   * Get client by RFC
+   *
+   * @param token contains the authentication token
+   * @param rfc contains the client RFC
+   * @return client wrapper
+   */
+  public ClientWrapper getClientByRFC(String token, String rfc);
 
 }

@@ -55,4 +55,8 @@ public class AuraUtilsMapper {
   public static final String TASK_NUMBER_PARAM = "numero_tarea_param";
   public static final String BRANCH_OFFICE_PARAM = "sucursal_param";
 
+  //error messages
+  public static final String MESSAGE_ERROR_LOCALIZED = " |localized ";
+  public static final String MESSAGE_ERROR_MESSAGE = " |message ";
+
 }
